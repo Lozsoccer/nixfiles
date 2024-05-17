@@ -1,5 +1,5 @@
 {
-  description = "Dailyherold Nix Config";
+  description = "Lozsoccer Nix Config";
 
   inputs = {
     # Nixpkgs
@@ -11,10 +11,6 @@
 
     # Hardware flakes
     nix-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    # Disks
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
 
     # VSCode extensions
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
@@ -29,7 +25,6 @@
     nixpkgs,
     home-manager,
     nixos-hardware,
-    disko,
     nix-vscode-extensions,
     catppuccin,
     ...
@@ -58,8 +53,8 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # Main desktop
-      nixzen = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/nixzen disko.nixosModules.disko];
+      nixos = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/nixos];
         specialArgs = {inherit inputs outputs;};
       };
     };
@@ -68,11 +63,11 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # Main desktop
-      "dailyherold@nixzen" = lib.homeManagerConfiguration {
+      "loz@nixos" = lib.homeManagerConfiguration {
         pkgs = pkgsFor.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          ./home-manager/nixzen.nix
+          ./home-manager/nixos.nix
           catppuccin.homeManagerModules.catppuccin
         ];
       };

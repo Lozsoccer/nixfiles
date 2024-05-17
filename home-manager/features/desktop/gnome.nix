@@ -37,7 +37,7 @@ with lib.hm.gvariant; {
     };
 
     "org/gtk/settings/file-chooser" = {
-      clock-format = "24h";
+      clock-format = "12h";
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
@@ -53,7 +53,7 @@ with lib.hm.gvariant; {
 
     "org/gnome/shell" = {
       enabled-extensions = ["pop-shell@system76.com" "pano@elhan.io"];
-      favorite-apps = ["element-desktop.desktop" "firefox.desktop" "slack.desktop" "kitty.desktop"];
+      favorite-apps = ["element-desktop.desktop" "firefox.desktop" "kitty.desktop" "google-chrome.desktop"];
     };
 
     "org/gnome/shell/extensions/pop-shell" = {

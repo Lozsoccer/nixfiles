@@ -45,8 +45,8 @@
   xdg.enable = true;
 
   home = {
-    username = "dailyherold";
-    homeDirectory = "/home/dailyherold";
+    username = "loz";
+    homeDirectory = "/home/loz";
   };
 
   # Theme
@@ -82,8 +82,8 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    userName = "dailyherold";
-    userEmail = "git@dailyherold.simplelogin.com";
+    userName = "lozsoccer";
+    userEmail = "whalenlawrence@gmail.com";
     aliases = {
       st = "status";
       lg = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit";

@@ -18,16 +18,12 @@
     # Fixes a reported suspend bug that I _think_ I've experienced after computer locked for long duration (requires power button press to wake up sometimes vs just keeb/mouse)
     # inputs.nix-hardware.nixosModules.gigabyte-b550
 
-    # Disks
-    ./disks.nix
-
     # Config
-    ../common/users/dailyherold
+    ../common/users/loz
     ../common/input
     ../common/locale.nix
     ../common/pipewire.nix
     ../common/network.nix
-    ../common/mount.nix
     ../common/virt.nix # see also home-manager/features/virt.nix
   ];
 
@@ -53,6 +49,7 @@
           "steam"
           "steam-original"
           "steam-run"
+          "google-chrome"
         ];
     };
   };
@@ -97,7 +94,7 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin = {
     enable = true;
-    user = "dailyherold";
+    user = "loz";
   };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
@@ -108,7 +105,7 @@
   services.printing.enable = true;
 
   # Set your hostname
-  networking.hostName = "nixzen";
+  networking.hostName = "nixos";
 
   # Kernel
   # Using 6.8 for default enabled Scarlett drivers
@@ -135,6 +132,7 @@
     pkgs.darktable
     pkgs.rapid-photo-downloader
     pkgs.openswitcher
+    pkgs.google-chrome
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
