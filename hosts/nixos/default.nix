@@ -133,6 +133,9 @@
     pkgs.rapid-photo-downloader
     pkgs.openswitcher
     pkgs.google-chrome
+    pkgs.libreoffice-fresh
+    pkgs.hunspell # spell check for Libreoffice
+    pkgs.hunspellDicts.en_US
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
